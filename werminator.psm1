@@ -30,7 +30,7 @@ function Invoke-Terminal {
         $profiledir = $Env:werminator
         if (-Not $profiledir) {
             Write-Error "Env:werminator not configured, exiting."
-            Exit
+            Return
         }
         $fullConfig = -join((Join-Path -Path $profiledir $config), ".json")
     }
@@ -40,7 +40,7 @@ function Invoke-Terminal {
 
         if (-not (Test-Path -Path (-join($fullConfig, "c")) -PathType Leaf)) {
             Write-Error "config file $fullConfig(c) not found, exiting."
-            Exit
+            Return
         } else {
             $fullConfig = -join($fullConfig, "c") # Handle jsonc
         }
@@ -75,7 +75,7 @@ function Invoke-Terminal {
         $line += " -d `"$dir`""
 
         if ($exec.cmd) {
-            $line += " $($exec.cmd) "
+            $line += " pwsh -noExit -Command `"$($exec.cmd)`""
         }
 
         $psExec += " $line "
