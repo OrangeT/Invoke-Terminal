@@ -12,7 +12,7 @@ Git Clone, then import module.
 You can add the module to your Powershell session scripts.
 
 ```bash
-git clone https://github.com/kianryan/Invoke-Module/
+git clone https://github.com/OrangeT/Invoke-Module/
 cd Invoke-Module
 Import-Module Invoke-Terminal.psm1
 ```
