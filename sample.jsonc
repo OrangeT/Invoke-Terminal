@@ -1,0 +1,19 @@
+// Test script to launch a dotnet core project
+{
+    "root": "d:\\sampleapp\\",
+    "env": "Powershell",
+    "exec":
+        [
+        {
+            "dir": ""                               // Window for input
+        },
+        {
+            "dir" : "src/sample.app",                              // Launch dotnet
+            "cmd": "dotnet run",
+            "split": "V"
+        },
+        {
+            "movefocus": "left"
+        }
+    ]
+}
