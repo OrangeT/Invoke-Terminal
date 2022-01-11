@@ -4,6 +4,8 @@ Invoke-Terminal is a Powershell Module for launching a set of JSON configured Wi
 
 Invoke-Terminal is inspired by [Tmuxinator](https://github.com/tmuxinator/tmuxinator)
 
+![sample launch](/docs/sample.png)
+
 ## Installation
 
 Git Clone, then import module.
@@ -21,7 +23,7 @@ Configuration files are json formatted parameters to be passed to Windows Termin
 
 Sample config can be found in sample.jsonc
 
-If environemnt variable "werminator" is set to a config folder, Invoke-Terminal can launch from any location:
+If environment variable "invoketerminal" is set to a folder, Invoke-Terminal can launch from any location:
 
 ```powershell
 Invoke-Terminal sample

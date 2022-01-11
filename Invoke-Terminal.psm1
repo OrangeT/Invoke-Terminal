@@ -10,11 +10,11 @@
 
  .Example
    # Launch Windows Terminal from global config file.
-   Werminator-Launch config               # Launch from global
+   Invoke-Terminal sample               # Launch from global
 
  .Example
    # Launch Windows Terminal from local config file.
-   Werminator-Launch .\pret.json          # Launch from local file
+   Invoke-Terminal .\sample.jsonc          # Launch from local file
 #>
 
 function Invoke-Terminal {
@@ -27,9 +27,9 @@ function Invoke-Terminal {
         # Then it's a local config file.
         $fullConfig = $config
     } else {
-        $profiledir = $Env:werminator
+        $profiledir = $Env:invoketerminal
         if (-Not $profiledir) {
-            Write-Error "Env:werminator not configured, exiting."
+            Write-Error "Env:invoketerminal not configured, exiting."
             Return
         }
         $fullConfig = -join((Join-Path -Path $profiledir $config), ".json")
@@ -89,5 +89,3 @@ function Invoke-Terminal {
 
 }
 Export-ModuleMember -Function Invoke-Terminal
-
-# Werminator - configure scripts/profiles to s
